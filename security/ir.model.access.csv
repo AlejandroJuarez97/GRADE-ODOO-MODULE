@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_res_grade,access.res.grade,model_res_grade,base.group_user,1,1,1,1
+access_res_grade_line,access.res.grade.line,model_res_grade_line,base.group_user,1,1,1,1
+access_res_grade_inscriptions,access.res.grade.inscriptions,model_res_grade_inscriptions,base.group_user,1,1,1,1
