@@ -63,7 +63,21 @@ class GradeInscriptions (models.Model):
 		records = self.env['res.grade.util.list'].search([('res_partner_id', '=', self.res_partner.id)]).unlink()
 		return super(GradeInscriptions, self).unlink()
 
-	
+	@api.multi
+	def action_view_grade_inscription_line (self):
+	    view = self.env.ref('grade.grade_util_list_view')
+
+	    return {
+	        'type': 'ir.actions.act_window',
+	        'view_type': 'form',
+	        'view_mode': 'form',
+	        'res_model': self._name,
+	        'views': [(view.id, 'form')],
+	        'view_id': view.id,
+	        'res_id': self.id,
+	        'context': self.env.context
+	    }
+
 
 # Modelo de inscripciones (Registro de utiles por estudiantes)
 # Listado de productos por estudiante, se presenta en forma de tabla
